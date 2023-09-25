@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="css/modal.css"/>
+    <link rel="stylesheet" href="css/pickup.css"/>
+
+    <title>Schedule A Pickup, NOW!</title>
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="lobox">
+      <svg class="logo" viewbox="0 0 85 103" xmlns="http://www.w3.org/2000/svg">
+        <path d="M50 1H1V25C1 25 36.5 23.5 45.5 25C54.5 26.5 55 32 55 36C55 40 51.5504 46.0249 45.5 46H29V65H32.5L52.5 102.5H84L61.5 62.5C77.5976 55.9167 85.5 47.5 83 27.5C80.5 7.5 55 0.999994 50 1Z"/>
+      </svg>
+    </div>
+
+    <h1>Schedule a Pickup - EcoRevive</h1>
+    <p>Send a pickup request now, and we will be there for you!</p>
+    <form class="schedule-pickup-form">
+      <h2>Personal Details</h2>
+      <label for="">Name</label><br/>
+      <input class="name" type="text" placeholder="Your Name" required="required"/><br/>
+      <label for="">Email</label><br/>
+      <input class="email" type="email" placeholder="Your Email" required="required"/><br/>
+      <label for="">Phone Number</label><br/>
+      <input class="phone" type="text" placeholder="Your Phone number" required="required"/><br/>
+
+      <h2>Pickup Details</h2>
+      <label for="">Date for pickup</label><br/>
+      <input class="date_pickup" type="date" required="required"/><br/>
+      <label for="">Estimated Time pickup</label><br/>
+      <input class="time_pickup" type="time" min="09:00" max="20:00" required="required"/><br/>
+      <label for="">Address for Pickup</label><br/>
+      <textarea class="address_pickup" name="" id="" cols="30" rows="3" placeholder="Your Address" required="required"></textarea><br/>
+      <label for="">Anything more specific you'd want us to know?</label><br/>
+      <textarea class="extra_notes" name="" id="" cols="30" rows="3" placeholder="Any details?" required="required"></textarea><br/>
+
+      <h3>Recyclable Waste Details</h3>
+      <label for="">Type of e-waste:
+      </label><br/>
+      <select name="waste_type" input="input" class="waste_type" required="required">
+        <option value="" disabled="disabled" selected="selected">Please select the type of e-waste majorly</option>
+        <option value="Mobile">Mobile Devices(includes: Smartphones, Tablets, PDAs, Smartwatches, Cell phones etc) + other stuff</option>
+        <option value="Computer">Computer Equipment (includes: Desktop computers, Laptop computers, Computer monitors, Keyboards and mice, Printers, scanners, and fax machines, External hard drives and flash drives etc) + other stuff</option>
+        <option value="Entertainment">Entertainment Devices (includes: Televisions , DVD players and recorders, Hi-Fi systems, Radios, MP3 players, Digital cameras and camcorders etc) + other stuff</option>
+        <option value="Household">Household Appliances (includes: Refrigerators, Washing machines, Dryers, Microwaves, Vacuum cleaners, Toasters and toaster ovens, Coffee machines etc) + other stuff</option>
+        <option value="Office">Office Electronics (includes: Photocopiers, Shredders, Projectors, Telephone systems etc) + other stuff</option>
+        <option value="Gaming">Gaming Consoles (includes: PlayStation, Xbox, Nintendo, Handheld gaming devices etc) + other stuff</option>
+        <option value="Storage">Storage Devices (includes: CDs, DVDs, and Blu-ray discs, Hard drives, Solid-state drives etc) + other stuff</option>
+        <option value="Personal-Care">Personal Care Electronics (includes: Electric toothbrushes, Hairdryers, Electric shavers etc) + other stuff</option>
+        <option value="Batteries">Batteries (includes: Lead-acid batteries, NiMH and NiCd batteries, Lithium-ion and lithium polymer batteries etc) + other stuff</option>
+
+      </select>
+
+      <label for="">Estimate Quantity of waste:
+      </label><br/>
+      <select name="quantity" input="input" class="quantity" required="required">
+        <option value="" disabled="disabled" selected="selected">Please select an estimate range</option>
+        <option value="1-5 kgs">1 - 5 kilograms</option>
+        <option value="5-10 kgs">5 - 10 kilograms</option>
+        <option value="10-20 kgs">10 - 20 kilograms</option>
+        <option value="above 20 kgs">Above 20 kilograms</option>
+        <option value="above 50 kgs">Above 50 kilograms</option>
+        <option value="above 100 kgs">Above 100 kilograms</option>
+
+      </select>
+
+      <button type="submit" id="pickup" onclick="myFunction()">Submit</button>
+      <h4>*Please note that while we assure our services to be in accordance with the above pickup time and pickup date provided by you, it however doesn't guarantee it. Pickup of your waste is subject to availability of our resources. Minimum delay of a
+        day can be expected & you will be notified in advance by call.</h4>
+
+    </form>
+    <script> function myFunction() { var empt = document.forms["schedule-pickup-form"]["name"]["email"]["phone"].value; if (empt != "") { alert("Thank you for availing our services, you will be redirected to our homepage now."); window.location.href
+    = "index.html"; } else { alert("It seems that you have not entered all the details. Please do so for successfull submission"); } } </script>
+
+    <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h6>👆Error, please fill this field.</h6>
+        </div>
+        <div class="modal-body">
+          <p>If you didn't recieve any error, be rest assure your form is submitted.
+          </p>
+          <p>Thank you, for availing our services.</p>
+        </div>
+        <div class="modal-footer">
+          <h5>
+            <a href="index.html" class="button">Back to our main website</a>
+          </h5>
+
+        </div>
+      </div>
+
+    </div>
+
+    <script>
+      // Get the modal
+      var modal = document.getElementById("myModal");
+
+      // Get the button that opens the modal
+      var btn = document.getElementById("pickup");
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+
+      // When the user clicks the button, open the modal
+      btn.onclick = function () {
+        modal.style.display = "block";
+      }
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function () {
+        modal.style.display = "none";
+      }
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+    </script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase.js"></script>
+    <script src="app.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
